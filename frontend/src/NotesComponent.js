@@ -18,6 +18,11 @@ const NotesComponent = () => {
         .catch(error => console.error(error));
     }, []); // [] = dependencies, empty means useEffect only runs once when componenet is initiated
 
+    // for updates
+    const addNote = (newNote) => {
+        setNotes(prevNotes => [...prevNotes, newNote]);
+    }
+    
     return (
         <div>
             {notes.map(note => (
